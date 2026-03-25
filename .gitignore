@@ -1,0 +1,21 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# Rider / IntelliJ
+.idea/
+*.iml
+
+# Java / Maven
+target/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQLite DB (optional - exclude if you want clean repo)
+*.db
+
+# Logs
+*.log

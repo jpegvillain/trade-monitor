@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TradeMonitor.App/TradeMonitor.App.csproj" />
+  <Project Path="TradeMonitor.Core/TradeMonitor.Core.csproj" />
+  <Project Path="TradeMonitor.Data/TradeMonitor.Data.csproj" />
+  <Project Path="TradeMonitor.Services/TradeMonitor.Services.csproj" />
+</Solution>

@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="TradeMonitor.App.UserControls.TradeDetailsPanel"
+             xmlns:controls="clr-namespace:TradeMonitor.App.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="280">
+    <Border Padding="12"
+            CornerRadius="6"
+            BorderBrush="{StaticResource BorderBrushTheme}"
+            BorderThickness="1"
+            Background="{StaticResource PanelAltBackgroundBrush}">
+        <StackPanel>
+            <TextBlock Text="Trade Details"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Trade ID:" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.TradeId}" Grid.Row="0" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Book:" FontWeight="Bold" Grid.Row="1" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.Book}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Counterparty:" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.Counterparty}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Asset Class:" FontWeight="Bold" Grid.Row="3" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.AssetClass}" Grid.Row="3" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Trade Date:" FontWeight="Bold" Grid.Row="4" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.TradeDate, StringFormat=d}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Notional:" FontWeight="Bold" Grid.Row="5" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.Notional, StringFormat=N0}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Status:" FontWeight="Bold" Grid.Row="6" Grid.Column="0" Margin="0,0,8,8"/>
+                <controls:StatusBadge Status="{Binding SelectedTrade.Status}" Grid.Row="6" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Trader:" FontWeight="Bold" Grid.Row="7" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.Trader}" Grid.Row="7" Grid.Column="1" Margin="0,0,0,8"/>
+
+                <TextBlock Text="Region:" FontWeight="Bold" Grid.Row="8" Grid.Column="0" Margin="0,0,8,8"/>
+                <TextBlock Text="{Binding SelectedTrade.Region}" Grid.Row="8" Grid.Column="1" Margin="0,0,0,8"/>
+            </Grid>
+
+            <Separator Margin="0,12,0,12"/>
+
+            <TextBlock Text="Status Message"
+                       FontWeight="Bold"
+                       Margin="0,0,0,4"/>
+
+            <TextBlock Text="{Binding StatusMessage}"
+                       TextWrapping="Wrap"/>
+
+            <Separator Margin="0,12,0,12"/>
+
+            <TextBlock Text="Progress"
+                       FontWeight="Bold"
+                       Margin="0,0,0,4"/>
+
+            <TextBlock Text="{Binding ProgressMessage}"
+                       TextWrapping="Wrap"/>
+            
+        </StackPanel>
+    </Border>
+</UserControl>
